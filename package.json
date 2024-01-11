@@ -1,0 +1,17 @@
+{
+  "name": "odin-todo-list",
+  "version": "1.0.0",
+  "description": "This project is from The Odin Project (https://www.theodinproject.com). It has a  comprehensive curriculum to equip one to be a full stack developer. In this  project, a todo list application is developed. The aim is to practice on SOLID  design principles. Function factories, prototype-based object oriented programming  and modules are also to be employed in the project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
