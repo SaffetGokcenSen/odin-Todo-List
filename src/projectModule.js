@@ -23,3 +23,5 @@ function addTodoListName(projectObjectName, todoListName) {
     tempObject.projectContent.push(todoListName); 
     saveProject(tempObject); 
 } 
+
+export { createProject, saveProject, addTodoListName };
