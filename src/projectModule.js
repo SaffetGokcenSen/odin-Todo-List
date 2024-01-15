@@ -6,3 +6,9 @@ function createProject(projectObjectName) {
     const projectContent = [];
     return { projectObjectName, projectContent };
 } 
+
+// A function to save the project object to the local storage. 
+// theProjectObject: The project object to be saved to the local storage. 
+function saveProject(theProjectObject) {
+    localStorage.setItem(theProjectObject.projectName, JSON.stringify(theProjectObject));
+} 
