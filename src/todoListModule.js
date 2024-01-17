@@ -45,3 +45,12 @@ function updateTodoListDueDate(todoStorageName, newDueDate) {
     tempObject.dueDate = newDueDate; 
     localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
 } 
+
+// the function to update the priority of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newPriority: The new priority of the todo list
+function updateTodoListPriority(todoStorageName, newPriority) {
+    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    tempObject.priority = newPriority; 
+    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
+} 
