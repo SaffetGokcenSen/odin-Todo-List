@@ -36,3 +36,12 @@ function updateTodoListDescription(todoStorageName, newDescription) {
     tempObject.description = newDescription; 
     localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
 } 
+
+// the function to update the due date of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newDueDate: The new due date of the todo list
+function updateTodoListDueDate(todoStorageName, newDueDate) {
+    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    tempObject.dueDate = newDueDate; 
+    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
+} 
