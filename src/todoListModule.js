@@ -18,3 +18,12 @@ function saveTodoList(theTodoObject, theProjectName) {
     localStorage.setItem(theTodoObject.storageName, JSON.stringify(theTodoObject)); 
     addTodoListName(theProjectName, theTodoObject.storageName);
 }
+
+// the function to update the title of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newTitle: The new title of the todo list
+function updateTodoListTitle(todoStorageName, newTitle) {
+    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    tempObject.title = newTitle; 
+    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
+} 
