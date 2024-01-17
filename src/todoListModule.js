@@ -27,3 +27,12 @@ function updateTodoListTitle(todoStorageName, newTitle) {
     tempObject.title = newTitle; 
     localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
 } 
+
+// the function to update the description of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newTitle: The new description of the todo list
+function updateTodoListDescription(todoStorageName, newDescription) {
+    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    tempObject.description = newDescription; 
+    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
+} 
