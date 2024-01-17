@@ -54,3 +54,10 @@ function updateTodoListPriority(todoStorageName, newPriority) {
     tempObject.priority = newPriority; 
     localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
 } 
+
+// the function to get a todo list 
+// todoStorageName: The storage name of the todo list 
+function getTodo(todoStorageName) {
+    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    return tempObject;
+}
