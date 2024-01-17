@@ -10,7 +10,7 @@ function createProject(projectObjectName) {
 // A function to save the project object to the local storage. 
 // theProjectObject: The project object to be saved to the local storage. 
 function saveProject(theProjectObject) {
-    localStorage.setItem(theProjectObject.projectName, JSON.stringify(theProjectObject));
+    localStorage.setItem(theProjectObject.projectObjectName, JSON.stringify(theProjectObject));
 } 
 
 // A function to update the content of a project by adding a new todo list.
