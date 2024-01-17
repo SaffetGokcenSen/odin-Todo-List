@@ -24,4 +24,17 @@ function addTodoListName(projectObjectName, todoListName) {
     saveProject(tempObject); 
 } 
 
-export { createProject, saveProject, addTodoListName };
+// A function to update the content of a project by removing a todo list.
+// projectObjectName: The name of the project. 
+// todoListName: The todo list to be removed from the content of the project. 
+function removeTodoListName(projectObjectName, todoListName) { 
+    // the project object obtained from the local storage.
+    tempObject = JSON.parse(localStorage.getItem(projectObjectName)); 
+    // the index of the todo is found
+    const index = tempObject.projectContent.indexOf(todoListName); 
+    // the todo is removed
+    tempObject.projectContent.splice(index, 1);
+    saveProject(tempObject); 
+} 
+
+export { createProject, saveProject, addTodoListName, removeTodoListName };
