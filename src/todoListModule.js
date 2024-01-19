@@ -63,3 +63,12 @@ function getTodo(todoStorageName) {
     tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
     return tempObject;
 }
+
+// the function to delete a todo list 
+// todoStorageName: The storage name of the todo list 
+function deleteTodoList(todoStorageName) { 
+    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    ownerProject = tempObject.ownerProject; 
+    localStorage.removeItem(todoStorageName); 
+    removeTodoListName(ownerProject, todoStorageName);
+}
