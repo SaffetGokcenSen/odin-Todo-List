@@ -49,4 +49,5 @@ function deleteProject(projectObjectName) {
     localStorage.removeItem(projectObjectName); 
 }
 
-export { createProject, saveProject, addTodoListName, removeTodoListName };
+export { createProject, saveProject, addTodoListName, removeTodoListName, 
+    deleteProject };
