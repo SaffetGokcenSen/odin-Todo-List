@@ -43,4 +43,10 @@ function removeTodoListName(projectObjectName, todoListName) {
     saveProject(tempObject); 
 } 
 
+// A function to remove a project from the local storage. 
+// projectObjectName: The name of the project. 
+function deleteProject(projectObjectName) {
+    localStorage.removeItem(projectObjectName); 
+}
+
 export { createProject, saveProject, addTodoListName, removeTodoListName };
