@@ -76,4 +76,8 @@ function deleteTodoList(todoStorageName) {
     ownerProject = tempObject.ownerProject; 
     localStorage.removeItem(todoStorageName); 
     removeTodoListName(ownerProject, todoStorageName);
-}
+} 
+
+export { createTodoList, saveTodoList, updateTodoListTitle, 
+    updateTodoListDescription, updateTodoListDueDate, updateTodoListPriority, 
+    deleteTodoList}
