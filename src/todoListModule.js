@@ -1,13 +1,15 @@
-import { addTodoListName } from "./projectModule.js";
+import { addTodoListName, removeTodoListName } from "./projectModule.js";
 
 // the factory function to create a todo list. 
 // storageName: The name of the object in the localStorage, set by the programmer. 
 // title: The title of the todo list, entered by the user.
 // description: The description of the todo list, entered by the user. 
 // dueDate: The due date of the todo list, entered by the user. 
-// priority: The priority of the todo list, entered by the user.
-function createTodoList(storageName, title, description, dueDate, priority) {
-    return { storageName, title, description, dueDate, priority };
+// priority: The priority of the todo list, entered by the user. 
+// ownerProject: The project which owns the todo list.
+function createTodoList(storageName, title, description, dueDate, priority, 
+    ownerProject) {
+    return { storageName, title, description, dueDate, priority, ownerProject };
 }
 
 // the function to save a todo list in a project. 
