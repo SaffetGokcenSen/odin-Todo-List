@@ -12,50 +12,19 @@ function createTodoList(storageName, title, description, dueDate, priority,
     return { storageName, title, description, dueDate, priority, ownerProject };
 }
 
+// the function to put a todo to the local storage.
+function putTodo(todoStorageName, todoObject) {
+    localStorage.setItem(todoStorageName, JSON.stringify(todoObject)); 
+}
+
 // the function to save a todo list in a project. 
 // theTodoObject: The todo object to be saved in the local storage. 
 // theProjectName: The name of the project the content of which is to be updated 
 // by adding the new todo list.
 function saveTodoList(theTodoObject, theProjectName) {
-    localStorage.setItem(theTodoObject.storageName, JSON.stringify(theTodoObject)); 
+    putTodo(theTodoObject.storageName, JSON.stringify(theTodoObject))
     addTodoListName(theProjectName, theTodoObject.storageName);
 }
-
-// the function to update the title of a todo list. 
-// todoStorageName: The storage name of the todo list 
-// newTitle: The new title of the todo list
-function updateTodoListTitle(todoStorageName, newTitle) {
-    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
-    tempObject.title = newTitle; 
-    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
-} 
-
-// the function to update the description of a todo list. 
-// todoStorageName: The storage name of the todo list 
-// newTitle: The new description of the todo list
-function updateTodoListDescription(todoStorageName, newDescription) {
-    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
-    tempObject.description = newDescription; 
-    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
-} 
-
-// the function to update the due date of a todo list. 
-// todoStorageName: The storage name of the todo list 
-// newDueDate: The new due date of the todo list
-function updateTodoListDueDate(todoStorageName, newDueDate) {
-    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
-    tempObject.dueDate = newDueDate; 
-    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
-} 
-
-// the function to update the priority of a todo list. 
-// todoStorageName: The storage name of the todo list 
-// newPriority: The new priority of the todo list
-function updateTodoListPriority(todoStorageName, newPriority) {
-    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
-    tempObject.priority = newPriority; 
-    localStorage.setItem(todoStorageName, JSON.stringify(tempObject)); 
-} 
 
 // the function to get a todo list 
 // todoStorageName: The storage name of the todo list 
@@ -64,10 +33,46 @@ function getTodo(todoStorageName) {
     return tempObject;
 }
 
+// the function to update the title of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newTitle: The new title of the todo list
+function updateTodoListTitle(todoStorageName, newTitle) {
+    tempObject = getTodo(todoStorageName);
+    tempObject.title = newTitle; 
+    putTodo(todoStorageName, tempObject);
+} 
+
+// the function to update the description of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newTitle: The new description of the todo list
+function updateTodoListDescription(todoStorageName, newDescription) {
+    tempObject = getTodo(todoStorageName);
+    tempObject.description = newDescription; 
+    putTodo(todoStorageName, tempObject);
+} 
+
+// the function to update the due date of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newDueDate: The new due date of the todo list
+function updateTodoListDueDate(todoStorageName, newDueDate) {
+    tempObject = getTodo(todoStorageName);
+    tempObject.dueDate = newDueDate; 
+    putTodo(todoStorageName, tempObject);
+} 
+
+// the function to update the priority of a todo list. 
+// todoStorageName: The storage name of the todo list 
+// newPriority: The new priority of the todo list
+function updateTodoListPriority(todoStorageName, newPriority) {
+    tempObject = getTodo(todoStorageName);
+    tempObject.priority = newPriority; 
+    putTodo(todoStorageName, tempObject);
+} 
+
 // the function to delete a todo list 
 // todoStorageName: The storage name of the todo list 
 function deleteTodoList(todoStorageName) { 
-    tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
+    tempObject = getTodo(todoStorageName);
     ownerProject = tempObject.ownerProject; 
     localStorage.removeItem(todoStorageName); 
     removeTodoListName(ownerProject, todoStorageName);
