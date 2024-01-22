@@ -1,0 +1,1 @@
+(()=>{if(localStorage.getItem("existingProjectNames"))console.log("existingProjectNames object in the local storage!"),JSON.parse(localStorage.getItem("existingProjectNames"));else{const e={projectNames:[]};console.log("No existingProjectNames object in the local storage!"),localStorage.setItem("existingProjectNames",JSON.stringify(e))}})();
