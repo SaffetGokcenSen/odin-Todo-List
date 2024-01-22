@@ -13,10 +13,19 @@ function getProject(projectObjectName) {
     return JSON.parse(localStorage.getItem(projectObjectName));
 }
 
+// A function to update the existing project names. 
+// theProjectObject: The project object to be saved to the local storage. 
+function addToExistingProjectNames(theProjectObject) {
+    const tempObject = JSON.parse(localStorage.getItem("existingProjectNames")); 
+    tempObject.projectNames.push(theProjectObject.projectObjectName); 
+    localStorage.setItem("existingProjectNames", JSON.stringify(tempObject));
+}
+
 // A function to save the project object to the local storage. 
 // theProjectObject: The project object to be saved to the local storage. 
 function saveProject(theProjectObject) {
-    localStorage.setItem(theProjectObject.projectObjectName, JSON.stringify(theProjectObject));
+    localStorage.setItem(theProjectObject.projectObjectName, JSON.stringify(theProjectObject)); 
+    addToExistingProjectNames(theProjectObject);
 } 
 
 // A function to update the content of a project by adding a new todo list.
