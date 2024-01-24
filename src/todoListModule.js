@@ -8,7 +8,7 @@ import { addTodoListName, removeTodoListName } from "./projectModule.js";
 // ownerProject: The project which owns the todo list.
 function createTodoList(title, description, dueDate, priority, 
     ownerProject) {
-    return { storageName, title, description, dueDate, priority, ownerProject };
+    return { title, description, dueDate, priority, ownerProject };
 }
 
 // the function to put a todo to the local storage.
