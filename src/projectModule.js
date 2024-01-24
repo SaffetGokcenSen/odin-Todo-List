@@ -13,7 +13,7 @@ function getProject(projectObjectName) {
     return JSON.parse(localStorage.getItem(projectObjectName));
 }
 
-// A function to update the existing project names. 
+// A function to add to the existing project names. 
 // theProjectObject: The project object to be saved to the local storage. 
 function addToExistingProjectNames(theProjectObject) {
     const tempObject = JSON.parse(localStorage.getItem("existingProjectNames")); 
@@ -51,6 +51,17 @@ function removeTodoListName(projectObjectName, todoListName) {
     tempObject.projectContent.splice(index, 1);
     saveProject(tempObject); 
 } 
+
+// A function to remove a project name from the existing project names. 
+// theProjectObject: The project object to be saved to the local storage. 
+function removeFromExistingProjectNames(theProjectObject) {
+    const tempObject = JSON.parse(localStorage.getItem("existingProjectNames")); 
+    // the index of the project name is found
+    const index = tempObject.projectContent.indexOf(theProjectObject.projectObjectName); 
+    // the project name is removed
+    tempObject.projectContent.splice(index, 1);
+    localStorage.setItem(JSON.stringify("existingProjectNames"));
+}
 
 // A function to remove a project from the local storage. 
 // projectObjectName: The name of the project. 
