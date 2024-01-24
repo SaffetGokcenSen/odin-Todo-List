@@ -18,11 +18,12 @@ function putTodo(todoStorageName, todoObject) {
 
 // the function to save a todo list in a project. 
 // theTodoObject: The todo object to be saved in the local storage. 
+// The name of the todo in the local storage, determined by the programmer. 
 // theProjectName: The name of the project the content of which is to be updated 
 // by adding the new todo list.
-function saveTodoList(theTodoObject, theProjectName) {
-    putTodo(theTodoObject.storageName, JSON.stringify(theTodoObject))
-    addTodoListName(theProjectName, theTodoObject.storageName);
+function saveTodoList(theTodoObject, storageName, theProjectName) {
+    putTodo(storageName, JSON.stringify(theTodoObject));
+    addTodoListName(theProjectName, storageName);
 }
 
 // the function to get a todo list 
