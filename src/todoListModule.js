@@ -6,8 +6,7 @@ import { addTodoListName, removeTodoListName } from "./projectModule.js";
 // dueDate: The due date of the todo list, entered by the user. 
 // priority: The priority of the todo list, entered by the user. 
 // ownerProject: The project which owns the todo list.
-function createTodoList(title, description, dueDate, priority, 
-    ownerProject) {
+function createTodoList(title, description, dueDate, priority, ownerProject) {
     return { title, description, dueDate, priority, ownerProject };
 }
 
