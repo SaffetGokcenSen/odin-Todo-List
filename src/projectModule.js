@@ -33,7 +33,7 @@ function saveProject(theProjectObject) {
 // todoListName: The todo list to be added to the content of the project. 
 function addTodoListName(projectObjectName, todoListName) { 
     // the project object obtained from the local storage.
-    tempObject = getProject(projectObjectName);
+    const tempObject = getProject(projectObjectName);
     // the content of the project updated by adding the todo list.
     tempObject.projectContent.push(todoListName); 
     saveProject(tempObject); 
@@ -44,7 +44,7 @@ function addTodoListName(projectObjectName, todoListName) {
 // todoListName: The todo list to be removed from the content of the project. 
 function removeTodoListName(projectObjectName, todoListName) { 
     // the project object obtained from the local storage.
-    tempObject = getProject(projectObjectName); 
+    const tempObject = getProject(projectObjectName); 
     // the index of the todo is found
     const index = tempObject.projectContent.indexOf(todoListName); 
     // the todo is removed
