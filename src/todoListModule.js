@@ -22,7 +22,7 @@ function putTodo(todoStorageName, todoObject) {
 // by adding the new todo list.
 function saveTodoList(theTodoObject, storageName, theProjectName) {
     putTodo(storageName, JSON.stringify(theTodoObject));
-    addTodoListName(theProjectName, storageName);
+    // addTodoListName(theProjectName, storageName);
 }
 
 // the function to get a todo list 
