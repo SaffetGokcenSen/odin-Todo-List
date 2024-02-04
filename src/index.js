@@ -1,6 +1,10 @@
 import { createTodoList, saveTodoList } from "./todoListModule"; 
+import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
+getProject} from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
+
+localStorage.clear();
 
 let existingProjectNames;
 
@@ -21,15 +25,16 @@ else {
 } 
 
 // Assume that a new todo list is created and saved in the local storage
-let title = "The school fee"; 
-let description = "I have to pay my son's school fee.";
-let dueDate = "02.01.1943";
+let title = "The book review"; 
+let description = "I am starting a book review.";
+let dueDate = "10.04.2024";
 let priority = "high"; 
-let ownerProject = "MySon";
+let ownerProject = "BookReview";
 // todo is created
 let todo = createTodoList(title, description, dueDate, priority, ownerProject); 
 // storage name of the todo is determined by the programmer
 let storageName = ownerProject + "-" + title; 
+console.log("the todo");
 console.log(todo)
 // the todo is stored in the storage
 saveTodoList(todo, storageName, ownerProject); 
