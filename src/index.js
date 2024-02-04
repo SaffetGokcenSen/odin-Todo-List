@@ -4,8 +4,10 @@ getProject} from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
 
+// local storage is cleared
 localStorage.clear();
 
+// the variable for the existing project names is declared
 let existingProjectNames;
 
 // Check if the object "existingProjectNames" exists on the local storage. If it 
@@ -44,12 +46,15 @@ console.log(existingProjectNames);
 const index = existingProjectNames.projectNames.indexOf(ownerProject); 
 console.log("index");
 console.log(index);
-if (index === -1) {
+if (index === -1) { // the project is new
+    // Hence, create it
     const newProject = createProject(ownerProject); 
+    // save it in the local storage
     saveProject(newProject); 
+    // register it to the existing project names
     addToExistingProjectNames(newProject);
 } 
-
+// register the new todo list to the owner project
 addTodoListName(ownerProject, storageName);
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
 console.log(existingProjectNames); 
