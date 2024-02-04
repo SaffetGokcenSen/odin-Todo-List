@@ -49,3 +49,9 @@ if (index === -1) {
     saveProject(newProject); 
     addToExistingProjectNames(newProject);
 } 
+
+addTodoListName(ownerProject, storageName);
+existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log(existingProjectNames); 
+const theOwnerProject = getProject(ownerProject); 
+console.log(theOwnerProject);
