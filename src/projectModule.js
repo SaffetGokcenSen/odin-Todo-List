@@ -25,7 +25,6 @@ function addToExistingProjectNames(theProjectObject) {
 // theProjectObject: The project object to be saved to the local storage. 
 function saveProject(theProjectObject) {
     localStorage.setItem(theProjectObject.projectObjectName, JSON.stringify(theProjectObject)); 
-    addToExistingProjectNames(theProjectObject);
 } 
 
 // A function to update the content of a project by adding a new todo list.
