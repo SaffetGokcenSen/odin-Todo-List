@@ -38,3 +38,14 @@ console.log("the todo");
 console.log(todo)
 // the todo is stored in the storage
 saveTodoList(todo, storageName, ownerProject); 
+console.log("existing project names:"); 
+console.log(existingProjectNames); 
+// is the project already existing?
+const index = existingProjectNames.projectNames.indexOf(ownerProject); 
+console.log("index");
+console.log(index);
+if (index === -1) {
+    const newProject = createProject(ownerProject); 
+    saveProject(newProject); 
+    addToExistingProjectNames(newProject);
+} 
