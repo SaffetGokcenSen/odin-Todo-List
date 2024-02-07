@@ -23,6 +23,7 @@ if (!localStorage.getItem("existingProjectNames")) {
 else {
     console.log("existingProjectNames object in the local storage!");
     existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+    console.log("existing project names:");
     console.log(existingProjectNames);
 } 
 
@@ -36,16 +37,14 @@ let ownerProject = "BookReview";
 let todo = createTodoList(title, description, dueDate, priority, ownerProject); 
 // storage name of the todo is determined by the programmer
 let storageName = ownerProject + "-" + title; 
-console.log("the todo");
-console.log(todo)
+console.log("the first todo");
+console.log(todo);
 // the todo is stored in the storage
 saveTodoList(todo, storageName, ownerProject); 
 console.log("existing project names:"); 
 console.log(existingProjectNames); 
 // is the project already existing?
 let index = existingProjectNames.projectNames.indexOf(ownerProject); 
-console.log("index");
-console.log(index);
 if (index === -1) { // the project is new
     // Hence, create it
     const newProject = createProject(ownerProject); 
@@ -58,8 +57,10 @@ if (index === -1) { // the project is new
 addTodoListName(ownerProject, storageName); 
 
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log("existing project names after the project creation:");
 console.log(existingProjectNames); 
 let theOwnerProject = getProject(ownerProject); 
+console.log("the owner project of the first todo:");
 console.log(theOwnerProject); 
 
 // Assume that a new todo list is created and saved in an existing project 
@@ -72,16 +73,14 @@ ownerProject = "BookReview";
 todo = createTodoList(title, description, dueDate, priority, ownerProject); 
 // storage name of the todo is determined by the programmer
 storageName = ownerProject + "-" + title; 
-console.log("the todo");
-console.log(todo)
+console.log("the second todo");
+console.log(todo);
 // the todo is stored in the storage
 saveTodoList(todo, storageName, ownerProject); 
 console.log("existing project names:"); 
 console.log(existingProjectNames); 
 // is the project already existing?
 index = existingProjectNames.projectNames.indexOf(ownerProject); 
-console.log("index");
-console.log(index);
 if (index === -1) { // the project is new
     // Hence, create it
     const newProject = createProject(ownerProject); 
@@ -94,6 +93,8 @@ if (index === -1) { // the project is new
 addTodoListName(ownerProject, storageName); 
 
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log("existing project names:");
 console.log(existingProjectNames); 
 theOwnerProject = getProject(ownerProject); 
+console.log("the owner project of the second todo:"); 
 console.log(theOwnerProject);
