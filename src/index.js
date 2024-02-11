@@ -105,3 +105,19 @@ removeTodoListName("BookReview", "BookReview-The review edit");
 theOwnerProject = getProject("BookReview"); 
 console.log("the project from which the second todo is removed:"); 
 console.log(theOwnerProject); 
+
+// a new project is created
+const newProject2 = createProject("Edits"); 
+// save it in the local storage
+saveProject(newProject2); 
+// register it to the existing project names
+addToExistingProjectNames(newProject2); 
+existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log("existing project names:");
+console.log(existingProjectNames); 
+// register the new "The review edit" todo list to this project
+addTodoListName(newProject2.projectObjectName, newProject2.projectObjectName+"-"+"The review edit"); 
+// it is checked if the todo is added to the "Edits" project
+theOwnerProject = getProject("Edits"); 
+console.log("the project to which the second todo is added:"); 
+console.log(theOwnerProject);
