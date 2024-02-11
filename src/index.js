@@ -1,6 +1,6 @@
 import { createTodoList, saveTodoList } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
-getProject} from "./projectModule";
+getProject, removeTodoListName} from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
 
@@ -97,4 +97,11 @@ console.log("existing project names:");
 console.log(existingProjectNames); 
 theOwnerProject = getProject(ownerProject); 
 console.log("the owner project of the second todo:"); 
-console.log(theOwnerProject);
+console.log(theOwnerProject); 
+
+// a todo is to be removed from an existing project 
+removeTodoListName("BookReview", "BookReview-The review edit");
+// it is checked if the todo is removed
+theOwnerProject = getProject("BookReview"); 
+console.log("the project from which the second todo is removed:"); 
+console.log(theOwnerProject); 
