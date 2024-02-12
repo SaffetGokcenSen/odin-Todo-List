@@ -1,4 +1,4 @@
-import { removeTodoListName } from "./projectModule.js";
+import { removeTodoListName, addTodoListName } from "./projectModule.js";
 
 // the factory function to create a todo list. 
 // title: The title of the todo list, entered by the user.
@@ -22,7 +22,7 @@ function putTodo(todoStorageName, todoObject) {
 // by adding the new todo list.
 function saveTodoList(theTodoObject, storageName, theProjectName) {
     putTodo(storageName, JSON.stringify(theTodoObject));
-    // addTodoListName(theProjectName, storageName);
+    addTodoListName(theProjectName, storageName);
 }
 
 // the function to get a todo list 
