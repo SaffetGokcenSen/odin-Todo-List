@@ -1,6 +1,6 @@
 import { createTodoList, saveTodoList, getTodo } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
-getProject, removeTodoListName} from "./projectModule";
+getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
 
@@ -38,9 +38,7 @@ let todo = createTodoList(title, description, dueDate, priority, ownerProject);
 // storage name of the todo is determined by the programmer
 let storageName = ownerProject + "-" + title; 
 console.log("the first todo");
-console.log(todo);
-// the todo is stored in the storage
-saveTodoList(todo, storageName, ownerProject); 
+console.log(todo); 
 console.log("existing project names:"); 
 console.log(existingProjectNames); 
 // is the project already existing?
@@ -53,6 +51,8 @@ if (index === -1) { // the project is new
     // register it to the existing project names
     addToExistingProjectNames(newProject);
 } 
+// the todo is stored in the storage
+saveTodoList(todo, storageName, ownerProject);
 // register the new todo list to the owner project
 addTodoListName(ownerProject, storageName); 
 
