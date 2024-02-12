@@ -20,7 +20,7 @@ function putTodo(todoStorageName, todoObject) {
 // The name of the todo in the local storage, determined by the programmer. 
 // theProjectName: The name of the project the content of which is to be updated 
 // by adding the new todo list.
-function saveTodoList(theTodoObject, storageName, theProjectName) {
+function saveTodoList(theTodoObject, storageName) {
     putTodo(storageName, JSON.stringify(theTodoObject));
 }
 
