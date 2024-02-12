@@ -79,4 +79,4 @@ function deleteTodoList(todoStorageName) {
 
 export { createTodoList, saveTodoList, updateTodoListTitle, 
     updateTodoListDescription, updateTodoListDueDate, updateTodoListPriority, 
-    deleteTodoList}
+    deleteTodoList, getTodo}
