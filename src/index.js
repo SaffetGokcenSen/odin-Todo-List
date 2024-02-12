@@ -1,4 +1,4 @@
-import { createTodoList, saveTodoList } from "./todoListModule"; 
+import { createTodoList, saveTodoList, getTodo } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName} from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -77,6 +77,10 @@ console.log("the second todo");
 console.log(todo);
 // the todo is stored in the storage
 saveTodoList(todo, storageName, ownerProject); 
+// is the todo stored in the local storage? 
+todo = getTodo(storageName);
+console.log("is the todo really stored in the local storage?"); 
+console.log(todo)
 console.log("existing project names:"); 
 console.log(existingProjectNames); 
 // is the project already existing?
