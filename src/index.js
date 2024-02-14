@@ -76,7 +76,7 @@ storageName = ownerProject + "-" + title;
 console.log("the second todo");
 console.log(todo);
 // the todo is stored in the storage
-saveTodoList(todo, storageName, ownerProject); 
+saveTodoList(todo, storageName); 
 // is the todo stored in the local storage? 
 todo = getTodo(storageName);
 console.log("is the todo really stored in the local storage?"); 
