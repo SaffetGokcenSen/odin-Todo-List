@@ -54,7 +54,7 @@ if (index === -1) { // the project is new
 // the todo is stored in the storage
 saveTodoList(todo, storageName);
 // register the new todo list to the owner project
-addTodoListName(ownerProject, storageName); 
+addTodoListName(ownerProject, title); 
 
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
 console.log("existing project names after the project creation:");
@@ -94,7 +94,7 @@ if (index === -1) { // the project is new
     addToExistingProjectNames(newProject);
 } 
 // register the new todo list to the owner project
-addTodoListName(ownerProject, storageName); 
+addTodoListName(ownerProject, title); 
 
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
 console.log("existing project names:");
@@ -120,7 +120,7 @@ existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames"));
 console.log("existing project names:");
 console.log(existingProjectNames); 
 // register the new "The review edit" todo list to this project
-addTodoListName(newProject2.projectObjectName, newProject2.projectObjectName+"-"+"The review edit"); 
+addTodoListName(newProject2.projectObjectName, "The review edit"); 
 // it is checked if the todo is added to the "Edits" project
 theOwnerProject = getProject("Edits"); 
 console.log("the project to which the second todo is added:"); 
