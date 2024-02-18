@@ -104,7 +104,7 @@ console.log("the owner project of the second todo:");
 console.log(theOwnerProject); 
 
 // a todo is to be removed from an existing project 
-removeTodoListName("BookReview", "BookReview-The review edit");
+removeTodoListName("BookReview", "The review edit");
 // it is checked if the todo is removed
 theOwnerProject = getProject("BookReview"); 
 console.log("the project from which the second todo is removed:"); 
