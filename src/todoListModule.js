@@ -21,7 +21,7 @@ function putTodo(todoStorageName, todoObject) {
 // theProjectName: The name of the project the content of which is to be updated 
 // by adding the new todo list.
 function saveTodoList(theTodoObject, storageName) {
-    putTodo(storageName, JSON.stringify(theTodoObject));
+    putTodo(storageName, theTodoObject);
 }
 
 // the function to get a todo list 
@@ -29,7 +29,7 @@ function saveTodoList(theTodoObject, storageName) {
 function getTodo(todoStorageName) {
     const tempObject = JSON.parse(localStorage.getItem(todoStorageName)); 
     return tempObject;
-}
+} 
 
 // the function to update the title of a todo list. 
 // todoStorageName: The storage name of the todo list 
@@ -70,7 +70,7 @@ function updateTodoListPriority(todoStorageName, newPriority) {
 // the function to delete a todo list 
 // todoStorageName: The storage name of the todo list 
 function deleteTodoList(todoStorageName) { 
-    const tempObject = getTodo(todoStorageName);
+    const tempObject = getTodo(todoStorageName); 
     const ownerProject = tempObject.ownerProject; 
     localStorage.removeItem(todoStorageName); 
     removeTodoListName(ownerProject, todoStorageName);
