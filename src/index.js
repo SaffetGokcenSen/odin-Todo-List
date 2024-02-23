@@ -1,4 +1,5 @@
-import { createTodoList, saveTodoList, getTodo } from "./todoListModule"; 
+import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName } from 
+"./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -103,13 +104,6 @@ theOwnerProject = getProject(ownerProject);
 console.log("the owner project of the second todo:"); 
 console.log(theOwnerProject); 
 
-// a todo is to be removed from an existing project 
-removeTodoListName("BookReview", "The review edit");
-// it is checked if the todo is removed
-theOwnerProject = getProject("BookReview"); 
-console.log("the project from which the second todo is removed:"); 
-console.log(theOwnerProject); 
-
 // a new project is created
 const newProject2 = createProject("Edits"); 
 // save it in the local storage
@@ -119,7 +113,11 @@ addToExistingProjectNames(newProject2);
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
 console.log("existing project names:");
 console.log(existingProjectNames); 
-// register the new "The review edit" todo list to this project
+
+// register the new "The review edit" todo list to this project 
+let previousOwnerProject = "BookReview"; 
+updateTodoListStorageName(previousOwnerProject+"-"+"The review edit", 
+"Edits"+"-"+"The review edit", "Edits"); 
 addTodoListName(newProject2.projectObjectName, "The review edit"); 
 // it is checked if the todo is added to the "Edits" project
 theOwnerProject = getProject("Edits"); 
