@@ -53,7 +53,7 @@ if (index === -1) { // the project is new
     addToExistingProjectNames(newProject);
 } 
 // the todo is stored in the storage
-saveTodoList(todo, storageName);
+saveTodoList(storageName, todo);
 // register the new todo list to the owner project
 addTodoListName(ownerProject, title); 
 
@@ -77,7 +77,7 @@ storageName = ownerProject + "-" + title;
 console.log("the second todo");
 console.log(todo);
 // the todo is stored in the storage
-saveTodoList(todo, storageName); 
+saveTodoList(storageName, todo); 
 // is the todo stored in the local storage? 
 todo = getTodo(storageName);
 console.log("is the todo really stored in the local storage?"); 
