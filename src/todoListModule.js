@@ -10,18 +10,13 @@ function createTodoList(title, description, dueDate, priority, ownerProject) {
     return { title, description, dueDate, priority, ownerProject };
 }
 
-// the function to put a todo to the local storage.
-function putTodo(todoStorageName, todoObject) {
-    localStorage.setItem(todoStorageName, JSON.stringify(todoObject)); 
-}
-
 // the function to save a todo list in a project. 
 // theTodoObject: The todo object to be saved in the local storage. 
 // The name of the todo in the local storage, determined by the programmer. 
 // theProjectName: The name of the project the content of which is to be updated 
 // by adding the new todo list.
-function saveTodoList(theTodoObject, storageName) {
-    putTodo(storageName, theTodoObject);
+function saveTodoList(todoStorageName, todoObject) {
+    localStorage.setItem(todoStorageName, JSON.stringify(todoObject)); 
 }
 
 // the function to get a todo list 
@@ -37,7 +32,7 @@ function getTodo(todoStorageName) {
 function updateTodoListTitle(todoStorageName, newTitle) {
     const tempObject = getTodo(todoStorageName);
     tempObject.title = newTitle; 
-    putTodo(todoStorageName, tempObject);
+    saveTodoList(todoStorageName, tempObject);
 } 
 
 // the function to update the description of a todo list. 
@@ -46,7 +41,7 @@ function updateTodoListTitle(todoStorageName, newTitle) {
 function updateTodoListDescription(todoStorageName, newDescription) {
     const tempObject = getTodo(todoStorageName);
     tempObject.description = newDescription; 
-    putTodo(todoStorageName, tempObject);
+    saveTodoList(todoStorageName, tempObject);
 } 
 
 // the function to update the due date of a todo list. 
@@ -55,7 +50,7 @@ function updateTodoListDescription(todoStorageName, newDescription) {
 function updateTodoListDueDate(todoStorageName, newDueDate) {
     const tempObject = getTodo(todoStorageName);
     tempObject.dueDate = newDueDate; 
-    putTodo(todoStorageName, tempObject);
+    saveTodoList(todoStorageName, tempObject);
 } 
 
 // the function to update the priority of a todo list. 
@@ -64,7 +59,7 @@ function updateTodoListDueDate(todoStorageName, newDueDate) {
 function updateTodoListPriority(todoStorageName, newPriority) {
     const tempObject = getTodo(todoStorageName);
     tempObject.priority = newPriority; 
-    putTodo(todoStorageName, tempObject);
+    saveTodoList(todoStorageName, tempObject);
 } 
 
 // the function to delete a todo list 
@@ -82,7 +77,7 @@ function updateTodoListStorageName(previousStorageName, currentStorageName,
     const tempObject = JSON.parse(localStorage.getItem(previousStorageName)); 
     deleteTodoList(previousStorageName); 
     tempObject.ownerProject = newOwnerProjectName; 
-    putTodo(currentStorageName, tempObject);
+    saveTodoList(currentStorageName, tempObject);
 }
 
 export { createTodoList, saveTodoList, updateTodoListTitle, 
