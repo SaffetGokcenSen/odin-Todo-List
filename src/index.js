@@ -118,7 +118,12 @@ console.log(existingProjectNames);
 let previousOwnerProject = "BookReview"; 
 updateTodoListStorageName(previousOwnerProject+"-"+"The review edit", 
 "Edits"+"-"+"The review edit", "Edits"); 
+// add the todo to the content of the "Edits" project
 addTodoListName(newProject2.projectObjectName, "The review edit"); 
+// Has updateTodoListStorageName function worked correctly?
+todo = getTodo("Edits-The review edit");
+console.log("is the todo really stored in the local storage?"); 
+console.log(todo); 
 // it is checked if the todo is added to the "Edits" project
 theOwnerProject = getProject("Edits"); 
 console.log("the project to which the second todo is added:"); 
