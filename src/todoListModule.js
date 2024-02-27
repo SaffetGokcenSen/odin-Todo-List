@@ -65,10 +65,7 @@ function updateTodoListPriority(todoStorageName, newPriority) {
 // the function to delete a todo list 
 // todoStorageName: The storage name of the todo list 
 function deleteTodoList(todoStorageName) { 
-    const tempObject = getTodo(todoStorageName); 
-    const ownerProject = tempObject.ownerProject; 
     localStorage.removeItem(todoStorageName); 
-    removeTodoListName(ownerProject, todoStorageName);
 } 
 
 // the function to update the storage name of the todo 
