@@ -72,12 +72,10 @@ function deleteTodoList(todoStorageName) {
 } 
 
 // the function to update the storage name of the todo 
-function updateTodoListStorageName(previousStorageName, currentStorageName, 
-    newOwnerProjectName) {
+function updateTodoListStorageName(previousStorageName, newOwnerProjectName) {
     const tempObject = JSON.parse(localStorage.getItem(previousStorageName)); 
-    deleteTodoList(previousStorageName); 
     tempObject.ownerProject = newOwnerProjectName; 
-    saveTodoList(currentStorageName, tempObject);
+    return tempObject;
 }
 
 export { createTodoList, saveTodoList, updateTodoListTitle, 
