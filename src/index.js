@@ -1,5 +1,5 @@
-import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName } from 
-"./todoListModule"; 
+import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName, 
+    deleteTodoList } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -116,8 +116,12 @@ console.log(existingProjectNames);
 
 // register the new "The review edit" todo list to this project 
 let previousOwnerProject = "BookReview"; 
-updateTodoListStorageName(previousOwnerProject+"-"+"The review edit", 
-"Edits"+"-"+"The review edit", "Edits"); 
+let previousStorageName = previousOwnerProject+"-"+"The review edit";
+let updatedTodo = updateTodoListStorageName(previousStorageName, "Edits"); 
+deleteTodoList(previousStorageName); 
+saveTodoList("Edits"+"-"+"The review edit", updatedTodo); 
+
+
 // add the todo to the content of the "Edits" project
 addTodoListName(newProject2.projectObjectName, "The review edit"); 
 // Has updateTodoListStorageName function worked correctly?
