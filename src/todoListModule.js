@@ -1,5 +1,3 @@
-import { removeTodoListName } from "./projectModule.js";
-
 // the factory function to create a todo list. 
 // title: The title of the todo list, entered by the user.
 // description: The description of the todo list, entered by the user. 
