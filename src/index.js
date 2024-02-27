@@ -119,6 +119,12 @@ let previousOwnerProject = "BookReview";
 let previousStorageName = previousOwnerProject+"-"+"The review edit";
 let updatedTodo = updateTodoListStorageName(previousStorageName, "Edits"); 
 deleteTodoList(previousStorageName); 
+
+let previousOwnerProjectObject = getProject(previousOwnerProject);
+previousOwnerProjectObject = removeTodoListName(
+    previousOwnerProjectObject, previousStorageName); 
+saveProject(previousOwnerProjectObject); 
+
 saveTodoList("Edits"+"-"+"The review edit", updatedTodo); 
 
 
