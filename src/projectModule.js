@@ -41,14 +41,12 @@ function addTodoListName(projectObjectName, todoListName) {
 // A function to update the content of a project by removing a todo list.
 // projectObjectName: The name of the project. 
 // todoListName: The todo list to be removed from the content of the project. 
-function removeTodoListName(projectObjectName, todoListName) { 
-    // the project object obtained from the local storage.
-    const tempObject = getProject(projectObjectName); 
+function removeTodoListName(projectObject, todoListName) { 
     // the index of the todo is found
-    const index = tempObject.projectContent.indexOf(todoListName); 
+    const index = projectObject.projectContent.indexOf(todoListName); 
     // the todo is removed
-    tempObject.projectContent.splice(index, 1);
-    saveProject(tempObject); 
+    projectObject.projectContent.splice(index, 1); 
+    return projectObject;
 } 
 
 // A function to remove a project name from the existing project names. 
