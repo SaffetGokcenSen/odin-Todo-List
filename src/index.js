@@ -114,7 +114,7 @@ existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames"));
 console.log("existing project names:");
 console.log(existingProjectNames); 
 
-// register the new "The review edit" todo list to this project 
+// update the storage name of the todo "The review edit" 
 let previousOwnerProject = "BookReview"; 
 let previousStorageName = previousOwnerProject+"-"+"The review edit";
 let updatedTodo = updateTodoListStorageName(previousStorageName, "Edits"); 
