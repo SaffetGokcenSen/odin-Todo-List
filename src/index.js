@@ -53,9 +53,12 @@ if (index === -1) { // the project is new
     addToExistingProjectNames(newProject);
 } 
 // the todo is stored in the storage
-saveTodoList(storageName, todo);
+saveTodoList(storageName, todo); 
+
 // register the new todo list to the owner project
-addTodoListName(ownerProject, title); 
+let ownerProjectObject = getProject(ownerProject); 
+ownerProjectObject = addTodoListName(ownerProjectObject, title); 
+saveProject(ownerProjectObject);
 
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
 console.log("existing project names after the project creation:");
@@ -94,8 +97,10 @@ if (index === -1) { // the project is new
     // register it to the existing project names
     addToExistingProjectNames(newProject);
 } 
-// register the new todo list to the owner project
-addTodoListName(ownerProject, title); 
+// register the new todo list to the owner project 
+ownerProjectObject = getProject(ownerProject); 
+ownerProjectObject = addTodoListName(ownerProjectObject, title); 
+saveProject(ownerProjectObject);
 
 existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
 console.log("existing project names:");
@@ -128,8 +133,10 @@ saveProject(previousOwnerProjectObject);
 saveTodoList("Edits"+"-"+"The review edit", updatedTodo); 
 
 
-// add the todo to the content of the "Edits" project
-addTodoListName(newProject2.projectObjectName, "The review edit"); 
+// add the todo to the content of the "Edits" project 
+ownerProjectObject = getProject("Edits"); 
+ownerProjectObject = addTodoListName(ownerProjectObject, "The review edit"); 
+saveProject(ownerProjectObject);
 // Has updateTodoListStorageName function worked correctly?
 todo = getTodo("Edits-The review edit");
 console.log("is the todo really stored in the local storage?"); 
