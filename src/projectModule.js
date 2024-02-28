@@ -31,11 +31,9 @@ function saveProject(theProjectObject) {
 // projectObjectName: The name of the project. 
 // todoListName: The todo list to be added to the content of the project. 
 function addTodoListName(projectObjectName, todoListName) { 
-    // the project object obtained from the local storage.
-    const tempObject = getProject(projectObjectName);
     // the content of the project updated by adding the todo list.
-    tempObject.projectContent.push(todoListName); 
-    saveProject(tempObject); 
+    projectObjectName.projectContent.push(todoListName); 
+    return projectObjectName;
 } 
 
 // A function to update the content of a project by removing a todo list.
