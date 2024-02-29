@@ -27,10 +27,9 @@ function getTodo(todoStorageName) {
 // the function to update the title of a todo list. 
 // todoStorageName: The storage name of the todo list 
 // newTitle: The new title of the todo list
-function updateTodoListTitle(todoStorageName, newTitle) {
-    const tempObject = getTodo(todoStorageName);
-    tempObject.title = newTitle; 
-    saveTodoList(todoStorageName, tempObject);
+function updateTodoListTitle(todoObject, newTitle) {
+    todoObject.title = newTitle; 
+    return todoObject;
 } 
 
 // the function to update the description of a todo list. 
