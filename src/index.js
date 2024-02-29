@@ -1,5 +1,5 @@
 import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName, 
-    deleteTodoList } from "./todoListModule"; 
+    deleteTodoList, updateTodoListTitle } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -124,14 +124,11 @@ let previousOwnerProject = "BookReview";
 let previousStorageName = previousOwnerProject+"-"+"The review edit";
 let updatedTodo = updateTodoListStorageName(previousStorageName, "Edits"); 
 deleteTodoList(previousStorageName); 
-
 let previousOwnerProjectObject = getProject(previousOwnerProject);
 previousOwnerProjectObject = removeTodoListName(
     previousOwnerProjectObject, previousStorageName); 
 saveProject(previousOwnerProjectObject); 
-
 saveTodoList("Edits"+"-"+"The review edit", updatedTodo); 
-
 
 // add the todo to the content of the "Edits" project 
 ownerProjectObject = getProject("Edits"); 
@@ -144,4 +141,14 @@ console.log(todo);
 // it is checked if the todo is added to the "Edits" project
 theOwnerProject = getProject("Edits"); 
 console.log("the project to which the second todo is added:"); 
-console.log(theOwnerProject);
+console.log(theOwnerProject); 
+
+// the title of the todo "Edits-The review edit" is to be updated to the new title 
+// "Edits-The review of the edit" 
+todo = getTodo("Edits-The review edit"); 
+todo = updateTodoListTitle(todo, "The review of the edit");
+saveTodoList("Edits-The review edit", todo); 
+// Has updateTodoListTitle function worked correctly?
+todo = getTodo("Edits-The review edit");
+console.log("is the todo title updated to 'The review of the edit'?"); 
+console.log(todo);
