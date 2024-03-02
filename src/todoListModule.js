@@ -35,10 +35,9 @@ function updateTodoListTitle(todoObject, newTitle) {
 // the function to update the description of a todo list. 
 // todoStorageName: The storage name of the todo list 
 // newTitle: The new description of the todo list
-function updateTodoListDescription(todoStorageName, newDescription) {
-    const tempObject = getTodo(todoStorageName);
-    tempObject.description = newDescription; 
-    saveTodoList(todoStorageName, tempObject);
+function updateTodoListDescription(todoObject, newDescription) {
+    todoObject.description = newDescription; 
+    return todoObject;
 } 
 
 // the function to update the due date of a todo list. 
