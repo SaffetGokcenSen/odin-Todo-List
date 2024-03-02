@@ -48,11 +48,11 @@ function removeTodoListName(projectObject, todoListName) {
 } 
 
 // A function to remove a project name from the existing project names. 
-// theProjectObject: The project object to be saved to the local storage. 
-function removeFromExistingProjectNames(theProjectObject) {
+// theProjectName: The project name to be removed.
+function removeFromExistingProjectNames(theProjectName) {
     const tempObject = JSON.parse(localStorage.getItem("existingProjectNames")); 
     // the index of the project name is found
-    const index = tempObject.projectContent.indexOf(theProjectObject.projectObjectName); 
+    const index = tempObject.projectContent.indexOf(theProjectName); 
     // the project name is removed
     tempObject.projectContent.splice(index, 1);
     localStorage.setItem(JSON.stringify("existingProjectNames"));
