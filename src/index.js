@@ -1,6 +1,6 @@
 import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName, 
     deleteTodoList, updateTodoListTitle, updateTodoListDescription, 
-    updateTodoListDueDate } from "./todoListModule"; 
+    updateTodoListDueDate, updateTodoListPriority } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -173,3 +173,13 @@ saveTodoList("Edits-The review edit", todo);
 todo = getTodo("Edits-The review edit");
 console.log("is the todo description updated properly?"); 
 console.log(todo); 
+
+// the priority of the todo is to be updated 
+priority = "very high"; 
+todo = getTodo("Edits-The review edit"); 
+todo = updateTodoListPriority(todo, priority);
+saveTodoList("Edits-The review edit", todo); 
+// Has updateTodoListPriority function worked correctly?
+todo = getTodo("Edits-The review edit");
+console.log("is the todo priority updated properly?"); 
+console.log(todo);
