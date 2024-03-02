@@ -51,11 +51,9 @@ function updateTodoListDueDate(todoObject, newDueDate) {
 // the function to update the priority of a todo list. 
 // todoStorageName: The storage name of the todo list 
 // newPriority: The new priority of the todo list
-function updateTodoListPriority(todoStorageName, newPriority) {
-    const tempObject = getTodo(todoStorageName);
-    tempObject.priority = newPriority; 
+function updateTodoListPriority(todoObject, newPriority) {
+    todoObject.priority = newPriority; 
     return todoObject;
-    saveTodoList(todoStorageName, tempObject);
 } 
 
 // the function to delete a todo list 
