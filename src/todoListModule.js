@@ -43,10 +43,9 @@ function updateTodoListDescription(todoObject, newDescription) {
 // the function to update the due date of a todo list. 
 // todoStorageName: The storage name of the todo list 
 // newDueDate: The new due date of the todo list
-function updateTodoListDueDate(todoStorageName, newDueDate) {
-    const tempObject = getTodo(todoStorageName);
-    tempObject.dueDate = newDueDate; 
-    saveTodoList(todoStorageName, tempObject);
+function updateTodoListDueDate(todoObject, newDueDate) {
+    todoObject.dueDate = newDueDate;
+    return todoObject;
 } 
 
 // the function to update the priority of a todo list. 
@@ -55,6 +54,7 @@ function updateTodoListDueDate(todoStorageName, newDueDate) {
 function updateTodoListPriority(todoStorageName, newPriority) {
     const tempObject = getTodo(todoStorageName);
     tempObject.priority = newPriority; 
+    return todoObject;
     saveTodoList(todoStorageName, tempObject);
 } 
 
