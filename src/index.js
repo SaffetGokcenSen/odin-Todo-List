@@ -1,5 +1,6 @@
 import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName, 
-    deleteTodoList, updateTodoListTitle } from "./todoListModule"; 
+    deleteTodoList, updateTodoListTitle, updateTodoListDescription } from 
+    "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -151,4 +152,14 @@ saveTodoList("Edits-The review edit", todo);
 // Has updateTodoListTitle function worked correctly?
 todo = getTodo("Edits-The review edit");
 console.log("is the todo title updated to 'The review of the edit'?"); 
-console.log(todo);
+console.log(todo); 
+
+// the description of the todo is to be updated 
+description = "The book review is to be edited.";
+todo = getTodo("Edits-The review edit"); 
+todo = updateTodoListDescription(todo, description);
+saveTodoList("Edits-The review edit", todo); 
+// Has updateTodoListDescription function worked correctly?
+todo = getTodo("Edits-The review edit");
+console.log("is the todo description updated properly?"); 
+console.log(todo); 
