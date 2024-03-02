@@ -2,7 +2,8 @@ import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName,
     deleteTodoList, updateTodoListTitle, updateTodoListDescription, 
     updateTodoListDueDate, updateTodoListPriority } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
-getProject, removeTodoListName } from "./projectModule";
+getProject, removeTodoListName, deleteProject, removeFromExistingProjectNames } 
+from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
 
@@ -182,4 +183,24 @@ saveTodoList("Edits-The review edit", todo);
 // Has updateTodoListPriority function worked correctly?
 todo = getTodo("Edits-The review edit");
 console.log("is the todo priority updated properly?"); 
-console.log(todo);
+console.log(todo); 
+
+// a new project is created 
+// is the project already existing? 
+const newProjectName = "Writings"; 
+index = existingProjectNames.projectNames.indexOf(newProjectName); 
+if (index === -1) { // the project is new
+    // Hence, create it
+    const newProject = createProject(newProjectName); 
+    // save it in the local storage
+    saveProject(newProject); 
+    // register it to the existing project names
+    addToExistingProjectNames(newProject);
+}  
+existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log("existing project names:");
+console.log(existingProjectNames); 
+
+// deleteProject is tested
+deleteProject(newProjectName); 
+console.log(getProject(newProjectName));
