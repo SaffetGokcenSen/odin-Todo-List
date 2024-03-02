@@ -1,6 +1,6 @@
 import { createTodoList, saveTodoList, getTodo, updateTodoListStorageName, 
-    deleteTodoList, updateTodoListTitle, updateTodoListDescription } from 
-    "./todoListModule"; 
+    deleteTodoList, updateTodoListTitle, updateTodoListDescription, 
+    updateTodoListDueDate } from "./todoListModule"; 
 import { createProject, saveProject, addToExistingProjectNames, addTodoListName, 
 getProject, removeTodoListName } from "./projectModule";
 // The functions for dealing with todo lists and related projects are now to be 
@@ -160,6 +160,16 @@ todo = getTodo("Edits-The review edit");
 todo = updateTodoListDescription(todo, description);
 saveTodoList("Edits-The review edit", todo); 
 // Has updateTodoListDescription function worked correctly?
+todo = getTodo("Edits-The review edit");
+console.log("is the todo description updated properly?"); 
+console.log(todo); 
+
+// the due date of the todo is to be updated 
+dueDate = "11.05.2024"; 
+todo = getTodo("Edits-The review edit"); 
+todo = updateTodoListDueDate(todo, dueDate);
+saveTodoList("Edits-The review edit", todo); 
+// Has updateTodoListDueDate function worked correctly?
 todo = getTodo("Edits-The review edit");
 console.log("is the todo description updated properly?"); 
 console.log(todo); 
