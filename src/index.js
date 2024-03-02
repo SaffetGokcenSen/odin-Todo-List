@@ -203,4 +203,13 @@ console.log(existingProjectNames);
 
 // deleteProject is tested
 deleteProject(newProjectName); 
-console.log(getProject(newProjectName));
+console.log(getProject(newProjectName)); 
+
+// removeFromExistingProjectNames is tested 
+existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log("existing project names:");
+console.log(existingProjectNames); 
+removeFromExistingProjectNames(newProjectName); 
+existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+console.log("existing project names:");
+console.log(existingProjectNames); 
