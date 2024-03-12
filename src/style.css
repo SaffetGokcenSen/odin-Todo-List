@@ -1,8 +1,11 @@
-html {
+html { 
+    /* root font size is 16px */
     font-size: 16px;
 } 
 
 .userWindow { 
+    /* userWindow class has a flex layout */ 
     display: flex; 
+    /* the class implies a width equal to the half of the viewport width */
     width: 50vw;
 }
