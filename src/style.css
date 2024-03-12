@@ -2,6 +2,7 @@ html {
     font-size: 16px;
 } 
 
-.userWindow {
-    display: flex;
+.userWindow { 
+    display: flex; 
+    width: 50vw;
 }
