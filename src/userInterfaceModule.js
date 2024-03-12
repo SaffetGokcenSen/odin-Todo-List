@@ -6,6 +6,7 @@ function setupMainFrames() {
     const userWindow = document.createElement("div"); 
     // the class of the user window is userWindow
     userWindow.className = "userWindow"; 
+    document.body.appendChild(userWindow);
 } 
 
 export { setupMainFrames };
