@@ -14,7 +14,14 @@ function setupMainFrames() {
     // the class of the project names window is projectNamesWindow 
     projectNamesWindow.className = "projectNamesWindow"; 
     // project names window is added to the user window
-    userWindow.appendChild(projectNamesWindow);
+    userWindow.appendChild(projectNamesWindow); 
+
+    // the window in which the todos are shown 
+    const todosWindow = document.createElement("div"); 
+    // the class of the todos window is todosWindow 
+    todosWindow.className = "todosWindow"; 
+    // todos window is added to the user window 
+    userWindow.appendChild(todosWindow);
 } 
 
 export { setupMainFrames };
