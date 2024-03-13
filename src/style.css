@@ -34,5 +34,9 @@ html {
     /* a solid orange border of 3px thick*/ 
     border: solid 3px orange; 
     /* the window has a 2 unit width in its parent flex container*/ 
-    flex: 2;
+    flex: 2; 
+    /* margins of the todos window are set */
+    margin-right: 0.2rem; 
+    margin-top: 0.2rem; 
+    margin-bottom: 0.2rem;
 }
