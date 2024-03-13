@@ -23,7 +23,11 @@ html {
     /* a solid red border of 3px thick*/ 
     border: solid 3px red; 
     /* the window has a 1 unit width in its parent flex container*/ 
-    flex: 1;
+    flex: 1; 
+    /* margins of the project names window are set */
+    margin-left: 0.2rem; 
+    margin-top: 0.2rem; 
+    margin-bottom: 0.2rem;
 } 
 
 .todosWindow {
