@@ -7,5 +7,12 @@ html {
     /* userWindow class has a flex layout */ 
     display: flex; 
     /* the class implies a width equal to the half of the viewport width */
-    width: 50vw;
+    width: 50vw; 
+    /* the class implies a hegiht equal to the sevnty percent of the viewport 
+    height */ 
+    height: 70vh; 
+    /* stling of the border of this class elements */
+    border-style: double;
+    border-width: 5px; 
+    border-color: blue;
 }
