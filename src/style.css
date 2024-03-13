@@ -23,3 +23,8 @@ html {
     /* the window has a 1 unit width in its parent flex container*/ 
     flex: 1;
 } 
+
+.todosWindow {
+    /* a solid orange border of 3px thick*/ 
+    border: solid 3px orange; 
+}
