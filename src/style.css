@@ -19,5 +19,7 @@ html {
 
 .projectNamesWindow {
     /* a solid red border of 3px thick*/ 
-    border: solid 3px red;
+    border: solid 3px red; 
+    /* the window has a 1 unit width in its parent flex container*/ 
+    flex: 1;
 } 
