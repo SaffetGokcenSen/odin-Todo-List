@@ -14,7 +14,9 @@ html {
     /* styling of the border of this class elements */
     border-style: double;
     border-width: 5px; 
-    border-color: blue;
+    border-color: blue; 
+    /* the gap between the items */
+    gap: 0.2rem;
 } 
 
 .projectNamesWindow {
