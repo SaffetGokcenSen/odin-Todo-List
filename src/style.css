@@ -27,4 +27,6 @@ html {
 .todosWindow {
     /* a solid orange border of 3px thick*/ 
     border: solid 3px orange; 
+    /* the window has a 2 unit width in its parent flex container*/ 
+    flex: 2;
 }
