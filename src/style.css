@@ -30,6 +30,10 @@ html {
     margin-bottom: 0.2rem;
 } 
 
+.projectNamesWindowHeader {
+    font-weight: bold;
+}
+
 .todosWindow {
     /* a solid orange border of 3px thick*/ 
     border: solid 3px orange; 
