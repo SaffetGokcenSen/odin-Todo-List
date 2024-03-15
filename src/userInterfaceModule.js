@@ -16,6 +16,9 @@ function setupMainFrames() {
     // project names window is added to the user window
     userWindow.appendChild(projectNamesWindow); 
 
+    // the div in which the header of the project names window is written 
+    const projectNamesWindowHeader = document.createElement("div"); 
+
     // the window in which the todos are shown 
     const todosWindow = document.createElement("div"); 
     // the class of the todos window is todosWindow 
