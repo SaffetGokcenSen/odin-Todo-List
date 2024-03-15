@@ -27,6 +27,8 @@ function setupMainFrames() {
 
     // the div in which the list of project names stands 
     const projectNamesList = document.createElement("div"); 
+    // the class of the project names list div 
+    projectNamesList.className = "projectNamesList"; 
 
     // the window in which the todos are shown 
     const todosWindow = document.createElement("div"); 
