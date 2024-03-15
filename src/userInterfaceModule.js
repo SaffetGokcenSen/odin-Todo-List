@@ -20,6 +20,8 @@ function setupMainFrames() {
     const projectNamesWindowHeader = document.createElement("div"); 
     // the class of the project names window header div 
     projectNamesWindowHeader.className = "projectNamesWindowHeader"; 
+    // project names window header is written
+    projectNamesWindowHeader.textContent = "PROJECTS";
 
     // the window in which the todos are shown 
     const todosWindow = document.createElement("div"); 
