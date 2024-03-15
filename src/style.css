@@ -36,6 +36,11 @@ html {
     font-weight: bold;
 } 
 
+.projectNamesList { 
+    /* project names list takes up the space left by the main size of the header*/
+    flex-grow: 1;
+}
+
 .todosWindow {
     /* a solid orange border of 3px thick*/ 
     border: solid 3px orange; 
