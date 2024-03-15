@@ -27,12 +27,13 @@ html {
     /* margins of the project names window are set */
     margin-left: 0.2rem; 
     margin-top: 0.2rem; 
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.2rem; 
+    display: flex;
 } 
 
 .projectNamesWindowHeader {
     font-weight: bold;
-}
+} 
 
 .todosWindow {
     /* a solid orange border of 3px thick*/ 
