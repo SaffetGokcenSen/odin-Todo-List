@@ -28,7 +28,8 @@ html {
     margin-left: 0.2rem; 
     margin-top: 0.2rem; 
     margin-bottom: 0.2rem; 
-    display: flex;
+    display: flex; 
+    flex-direction: column;
 } 
 
 .projectNamesWindowHeader {
