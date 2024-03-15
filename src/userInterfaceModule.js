@@ -23,7 +23,10 @@ function setupMainFrames() {
     // project names window header is written
     projectNamesWindowHeader.textContent = "PROJECTS";
     // project names window header is added to the project names window
-    projectNamesWindow.appendChild(projectNamesWindowHeader);
+    projectNamesWindow.appendChild(projectNamesWindowHeader); 
+
+    // the div in which the list of project names stands 
+    const projectNamesList = document.createElement("div"); 
 
     // the window in which the todos are shown 
     const todosWindow = document.createElement("div"); 
