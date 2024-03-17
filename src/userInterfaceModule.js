@@ -43,6 +43,8 @@ function setupMainFrames() {
 function implementProjectNamesList() { 
     // existing project names is fetched from the local storage
     const existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
+    // existing project names array assigned to a constant
+    const namesArray = existingProjectNames.projectNames; 
 }
 
 export { setupMainFrames, implementProjectNamesList };
