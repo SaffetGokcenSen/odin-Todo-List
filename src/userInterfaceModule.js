@@ -40,4 +40,7 @@ function setupMainFrames() {
     userWindow.appendChild(todosWindow);
 } 
 
-export { setupMainFrames };
+function implementProjectNamesList() { 
+}
+
+export { setupMainFrames, implementProjectNamesList };
