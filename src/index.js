@@ -6,7 +6,7 @@ import { createProject, saveProject, addToExistingProjectNames, addTodoListName,
 getProject, removeTodoListName, deleteProject, removeFromExistingProjectNames } 
 from "./projectModule";
 
-import { setupMainFrames } from "./userInterfaceModule";
+import { setupMainFrames, implementProjectNamesList } from "./userInterfaceModule";
 
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
@@ -218,4 +218,5 @@ existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames"));
 console.log("existing project names:");
 console.log(existingProjectNames); 
 
-setupMainFrames();
+setupMainFrames(); 
+implementProjectNamesList();
