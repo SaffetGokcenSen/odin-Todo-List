@@ -47,6 +47,11 @@ function implementProjectNamesList() {
     const namesArray = existingProjectNames.projectNames; 
     // access to the project names list div
     const projectNamesList = document.getElementsByClassName("projectNamesList")[0]; 
+    // a div for each project name is created and added to the list window
+    for (let i=0; i < namesArray.length; i++) {
+        const itemDiv = document.createElement("div"); 
+        itemDiv.textContent = namesArray[i];
+    } 
 }
 
 export { setupMainFrames, implementProjectNamesList };
