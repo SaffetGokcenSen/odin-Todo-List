@@ -45,6 +45,8 @@ function implementProjectNamesList() {
     const existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
     // existing project names array assigned to a constant
     const namesArray = existingProjectNames.projectNames; 
+    // access to the project names list div
+    const projectNamesList = document.getElementsByClassName("projectNamesList")[0]; 
 }
 
 export { setupMainFrames, implementProjectNamesList };
