@@ -39,7 +39,8 @@ html {
 
 .projectNamesList { 
     /* project names list takes up the space left by the main size of the header*/
-    flex-grow: 1;
+    flex-grow: 1; 
+    padding-left: 0.5rem;
 }
 
 .todosWindow {
