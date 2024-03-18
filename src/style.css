@@ -43,6 +43,11 @@ html {
     padding-left: 0.5rem;
 }
 
+/* the class of the div in which a project name is written */
+.projectNameListItem {
+    padding-bottom: 0.3rem;
+}
+
 .todosWindow {
     /* a solid orange border of 3px thick*/ 
     border: solid 3px orange; 
