@@ -51,7 +51,8 @@ function implementProjectNamesList() {
     // project name is written
     for (let i=0; i < namesArray.length; i++) {
         const itemDiv = document.createElement("div"); 
-        itemDiv.textContent = namesArray[i];
+        itemDiv.textContent = namesArray[i]; 
+        itemDiv.className = "projectNameListItem";
         projectNamesList.appendChild(itemDiv); 
     } 
 }
