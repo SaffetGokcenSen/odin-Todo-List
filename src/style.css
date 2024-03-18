@@ -46,6 +46,11 @@ html {
 /* the class of the div in which a project name is written */
 .projectNameListItem {
     padding-bottom: 0.3rem;
+} 
+
+.projectNameListItem:hover {
+    background-color: gold; 
+    cursor: zoom-in;
 }
 
 .todosWindow {
