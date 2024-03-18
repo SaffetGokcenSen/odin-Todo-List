@@ -51,6 +51,10 @@ html {
 .projectNameListItem:hover {
     background-color: gold; 
     cursor: zoom-in;
+} 
+
+.todoListName {
+    padding-left: 1rem;
 }
 
 .todosWindow {
