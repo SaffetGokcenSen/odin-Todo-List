@@ -60,6 +60,7 @@ function implementProjectNamesList() {
             for (let i=0; i < projectArray.length; i++) {
                 const todoNameDiv = document.createElement("div"); 
                 todoNameDiv.textContent = projectArray[i]; 
+                todoNameDiv.className = "todoListName";
                 e.currentTarget.appendChild(todoNameDiv);
             }
         });
