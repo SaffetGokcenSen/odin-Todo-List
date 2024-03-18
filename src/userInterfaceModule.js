@@ -1,4 +1,5 @@
-import './style.css';
+import './style.css'; 
+import { getProject } from './projectModule';
 
 // the function for setting up the main frames of the user interface. 
 function setupMainFrames() {
@@ -52,7 +53,16 @@ function implementProjectNamesList() {
     for (let i=0; i < namesArray.length; i++) {
         const itemDiv = document.createElement("div"); 
         itemDiv.textContent = namesArray[i]; 
-        itemDiv.className = "projectNameListItem";
+        itemDiv.className = "projectNameListItem"; 
+        itemDiv.addEventListener("click", function (e) {
+            const projectObject = getProject(this.textContent); 
+            const projectArray = projectObject.projectContent; 
+            for (let i=0; i < projectArray.length; i++) {
+                const todoNameDiv = document.createElement("div"); 
+                todoNameDiv.textContent = projectArray[i]; 
+                e.currentTarget.appendChild(todoNameDiv);
+            }
+        });
         projectNamesList.appendChild(itemDiv); 
     } 
 }
