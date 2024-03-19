@@ -41,6 +41,17 @@ function setupMainFrames() {
     userWindow.appendChild(todosWindow);
 } 
 
+function expandProjectName() {
+    const projectObject = getProject(this.textContent); 
+    const projectArray = projectObject.projectContent; 
+    for (let i=0; i < projectArray.length; i++) {
+        const todoNameDiv = document.createElement("div"); 
+        todoNameDiv.textContent = projectArray[i]; 
+        todoNameDiv.className = "todoListName";
+        this.appendChild(todoNameDiv);
+    }
+}
+
 function implementProjectNamesList() { 
     // existing project names is fetched from the local storage
     const existingProjectNames = JSON.parse(localStorage.getItem("existingProjectNames")); 
@@ -54,16 +65,7 @@ function implementProjectNamesList() {
         const itemDiv = document.createElement("div"); 
         itemDiv.textContent = namesArray[i]; 
         itemDiv.className = "projectNameListItem"; 
-        itemDiv.addEventListener("click", function (e) {
-            const projectObject = getProject(this.textContent); 
-            const projectArray = projectObject.projectContent; 
-            for (let i=0; i < projectArray.length; i++) {
-                const todoNameDiv = document.createElement("div"); 
-                todoNameDiv.textContent = projectArray[i]; 
-                todoNameDiv.className = "todoListName";
-                e.currentTarget.appendChild(todoNameDiv);
-            }
-        });
+        itemDiv.addEventListener("click", expandProjectName);
         projectNamesList.appendChild(itemDiv); 
     } 
 }
