@@ -68,7 +68,7 @@ function implementProjectNamesList() {
         itemName.textContent = namesArray[i]; 
         itemName.className = "projectName";
         itemDiv.className = "projectNameListItem"; 
-        itemDiv.addEventListener("click", expandProjectName);
+        itemDiv.addEventListener("click", expandProjectName, {once: true});
         itemDiv.appendChild(itemName);
         projectNamesList.appendChild(itemDiv); 
     } 
