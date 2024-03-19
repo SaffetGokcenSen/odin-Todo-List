@@ -51,7 +51,7 @@ html {
 /* the class for project name and cursor styling */
 .projectName:hover {
     background-color: gold; 
-    cursor: zoom-in;
+    cursor: pointer;
 } 
 
 .todoListName {
