@@ -63,9 +63,13 @@ function implementProjectNamesList() {
     // project name is written
     for (let i=0; i < namesArray.length; i++) {
         const itemDiv = document.createElement("div"); 
-        itemDiv.textContent = namesArray[i]; 
+        // the project name is written in the span element
+        const itemName = document.createElement("span");
+        itemName.textContent = namesArray[i]; 
+        itemName.className = "projectName";
         itemDiv.className = "projectNameListItem"; 
         itemDiv.addEventListener("click", expandProjectName);
+        itemDiv.appendChild(itemName);
         projectNamesList.appendChild(itemDiv); 
     } 
 }
