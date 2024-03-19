@@ -43,12 +43,13 @@ html {
     padding-left: 0.5rem;
 }
 
-/* the class of the div in which a project name is written */
+/* the class of the div in which a project name and its todos are written */
 .projectNameListItem {
     padding-bottom: 0.3rem;
 } 
 
-.projectNameListItem:hover {
+/* the class for project name and cursor styling */
+.projectName:hover {
     background-color: gold; 
     cursor: zoom-in;
 } 
