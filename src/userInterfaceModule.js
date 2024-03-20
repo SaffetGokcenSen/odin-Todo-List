@@ -41,15 +41,23 @@ function setupMainFrames() {
     userWindow.appendChild(todosWindow);
 } 
 
+function shrinkProjectName() {
+    while (this.parentNode.childNodes.length > 1) {
+        this.parentNode.removeChild(this.parentNode.lastChild);
+    }
+    this.addEventListener("click", expandProjectName, {once: true});
+}
+
 function expandProjectName() {
-    const projectObject = getProject(this.firstChild.textContent); 
+    const projectObject = getProject(this.textContent); 
     const projectArray = projectObject.projectContent; 
     for (let i=0; i < projectArray.length; i++) {
         const todoNameDiv = document.createElement("div"); 
         todoNameDiv.textContent = projectArray[i]; 
         todoNameDiv.className = "todoListName";
-        this.appendChild(todoNameDiv);
-    }
+        this.parentNode.appendChild(todoNameDiv);
+    } 
+    this.addEventListener("click", shrinkProjectName, {once: true});
 }
 
 function implementProjectNamesList() { 
@@ -68,7 +76,7 @@ function implementProjectNamesList() {
         itemName.textContent = namesArray[i]; 
         itemName.className = "projectName";
         itemDiv.className = "projectNameListItem"; 
-        itemDiv.addEventListener("click", expandProjectName, {once: true});
+        itemName.addEventListener("click", expandProjectName, {once: true});
         itemDiv.appendChild(itemName);
         projectNamesList.appendChild(itemDiv); 
     } 
