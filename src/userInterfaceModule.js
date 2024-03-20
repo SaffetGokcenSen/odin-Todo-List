@@ -51,6 +51,10 @@ function shrinkProjectName() {
 function expandProjectName() {
     const projectObject = getProject(this.textContent); 
     const projectArray = projectObject.projectContent; 
+    const todoTitle = document.createElement("div"); 
+    todoTitle.textContent = "Todos";
+    todoTitle.className = "todoTitle"; 
+    this.parentNode.appendChild(todoTitle);
     for (let i=0; i < projectArray.length; i++) {
         const todoNameDiv = document.createElement("div"); 
         todoNameDiv.textContent = projectArray[i]; 
