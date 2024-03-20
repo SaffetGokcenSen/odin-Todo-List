@@ -54,6 +54,11 @@ html {
     cursor: pointer;
 } 
 
+.todoTitle {
+    font-weight: bold; 
+    padding-left: 1rem;
+}
+
 .todoListName {
     padding-left: 1rem;
 }
