@@ -42,7 +42,7 @@ function setupMainFrames() {
 } 
 
 function expandProjectName() {
-    const projectObject = getProject(this.textContent); 
+    const projectObject = getProject(this.firstChild.textContent); 
     const projectArray = projectObject.projectContent; 
     for (let i=0; i < projectArray.length; i++) {
         const todoNameDiv = document.createElement("div"); 
