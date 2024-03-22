@@ -6,7 +6,7 @@ import { createProject, saveProject, addToExistingProjectNames, addTodoListName,
 getProject, removeTodoListName, deleteProject, removeFromExistingProjectNames } 
 from "./projectModule";
 
-import { setupMainFrames, implementProjectNamesList } from "./userInterfaceModule";
+import { setupMainFrames, implementProjectNamesList } from "./mainWindowsModule";
 
 // The functions for dealing with todo lists and related projects are now to be 
 // tested using the console. 
