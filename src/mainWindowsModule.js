@@ -1,5 +1,6 @@
 import './style.css'; 
-import { getProject } from './projectModule';
+import { getProject } from './projectModule'; 
+import { printTodo } from './todoWindowModule';
 
 // the function for setting up the main frames of the user interface. 
 function setupMainFrames() {
@@ -58,7 +59,8 @@ function expandProjectName() {
     for (let i=0; i < projectArray.length; i++) {
         const todoNameDiv = document.createElement("div"); 
         todoNameDiv.textContent = projectArray[i]; 
-        todoNameDiv.className = "todoListName";
+        todoNameDiv.className = "todoListName"; 
+        todoNameDiv.addEventListener("click", printTodo, {once: true});
         this.parentNode.appendChild(todoNameDiv);
     } 
     this.addEventListener("click", shrinkProjectName, {once: true});
