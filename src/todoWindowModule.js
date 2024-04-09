@@ -8,7 +8,8 @@ function printTodo() {
     // the storage name of the todo
     const todoStorageName = projectName + "-" + todoName; 
     const todoObject = getTodo(todoStorageName); 
-    this.addEventListener("click", printTodo, {once: true});
+    this.addEventListener("click", printTodo, {once: true}); 
+    console.log(todoObject);
 } 
 
 export { printTodo };
