@@ -59,8 +59,15 @@ html {
     padding-left: 1rem;
 }
 
-.todoListName {
+/* the class of the div to hold the class name span element*/
+.todoListNameDiv {
     padding-left: 1rem;
+} 
+
+/* todo name span element is styled*/
+.todoListName:hover {
+    background-color: greenyellow; 
+    cursor: pointer; 
 }
 
 .todosWindow {
