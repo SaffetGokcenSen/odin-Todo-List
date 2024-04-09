@@ -58,9 +58,12 @@ function expandProjectName() {
     this.parentNode.appendChild(todoTitle);
     for (let i=0; i < projectArray.length; i++) {
         const todoNameDiv = document.createElement("div"); 
-        todoNameDiv.textContent = projectArray[i]; 
-        todoNameDiv.className = "todoListName"; 
-        todoNameDiv.addEventListener("click", printTodo, {once: true});
+        const todoNameSpan = document.createElement("span"); 
+        todoNameSpan.textContent = projectArray[i];
+        todoNameSpan.className = "todoListName"; 
+        todoNameSpan.addEventListener("click", printTodo, {once: true});
+        todoNameDiv.appendChild(todoNameSpan); 
+        todoNameDiv.className = "todoListNameDiv"; 
         this.parentNode.appendChild(todoNameDiv);
     } 
     this.addEventListener("click", shrinkProjectName, {once: true});
