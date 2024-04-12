@@ -15,7 +15,9 @@ function printTodo() {
     // create the input element for the todo title
     const titleInput = document.createElement("input"); 
     // set the type of the input field 
-    titleInput.type = "text";
+    titleInput.type = "text"; 
+    // set the id of the input field 
+    titleInput.id = "title";
 } 
 
 export { printTodo };
