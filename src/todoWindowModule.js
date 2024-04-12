@@ -13,7 +13,9 @@ function printTodo() {
     // access to the todos window div
     const todosWindow = document.getElementsByClassName("todosWindow")[0];
     // create the input element for the todo title
-    const titleInput = document.createElement("input");
+    const titleInput = document.createElement("input"); 
+    // set the type of the input field 
+    titleInput.type = "text";
 } 
 
 export { printTodo };
