@@ -9,7 +9,9 @@ function printTodo() {
     const todoStorageName = projectName + "-" + todoName; 
     const todoObject = getTodo(todoStorageName); 
     this.addEventListener("click", printTodo, {once: true}); 
-    console.log(todoObject);
+    console.log(todoObject); 
+    // access to the todos window div
+    const todosWindow = document.getElementsByClassName("todosWindow")[0];
 } 
 
 export { printTodo };
