@@ -19,7 +19,12 @@ function printTodo() {
     // set the id of the input field 
     titleInput.id = "title"; 
     // set the value of the input field 
-    titleInput.value = todoObject.title;
+    titleInput.value = todoObject.title; 
+
+    // clear the todos window
+    while (todosWindow.childNodes.length >= 1) {
+        todosWindow.removeChild(todosWindow.lastChild);
+    }
 } 
 
 export { printTodo };
