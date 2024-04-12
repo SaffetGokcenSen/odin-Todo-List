@@ -24,7 +24,9 @@ function printTodo() {
     // clear the todos window
     while (todosWindow.childNodes.length >= 1) {
         todosWindow.removeChild(todosWindow.lastChild);
-    }
+    } 
+    // print the title of the todo
+    todosWindow.appendChild(titleInput);
 } 
 
 export { printTodo };
