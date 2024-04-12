@@ -17,7 +17,9 @@ function printTodo() {
     // set the type of the input field 
     titleInput.type = "text"; 
     // set the id of the input field 
-    titleInput.id = "title";
+    titleInput.id = "title"; 
+    // set the value of the input field 
+    titleInput.value = todoObject.title;
 } 
 
 export { printTodo };
